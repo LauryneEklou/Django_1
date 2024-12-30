@@ -4,7 +4,7 @@ Commande pour créer le projet :
 django-admin startproject crudproject1
 
 Ensuite, nous avons fait :
-python manage.py startapp enroll
+`python manage.py startapp enroll`
 pour créer une nouvelle application au sein du projet.
 
 Nous avons créé un dossier static pour notre code CSS et JS, dans lequel nous avons copié les fichiers CSS et JS de Bootstrap.
