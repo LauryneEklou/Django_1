@@ -5,11 +5,43 @@
         <h4 class="text-center alert alert-info">Add New Student</h4>
         <form action="" method="POST">
         {% csrf_token %}
-        {{form.as_p}}
+        {{ form.as_p }}
         <input type="submit" class="btn btn-success" value="Add">
-        
         </form>
     </div>
+    <div class="col-sm-8">
+        <h4 class="text-center alert alert-info">Show Student Information</h4>
+        {% if stu %}
+            <h4>Table Data</h4>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in stu %}
+                        <tr>
+                            <td>{{ student.id }}</td>
+                            <td>{{ student.username }}</td>
+                            <td>{{ student.email }}</td>
+                            <td><a href="{% url 'updatedata' student.id %}" class="btn btn-warning btn-sm">Edit</a></td>
+                            <td>
+                                <form action="{% url 'deletedata' student.id %}" method="post" class="d-inline">
+                                    {% csrf_token %}
+                                    <input type="submit" class="btn btn-danger" value="Delete">
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <h4 class="text-center alert alert-warning">No record</h4>
+        {% endif %}
+    </div>
 </div>
-
 {% endblock content %}

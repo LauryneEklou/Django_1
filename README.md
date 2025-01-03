@@ -1,4 +1,5 @@
 # Django_1
+<<<<<<< HEAD
 # mon premier crud avec django
 Commande pour créer le projet :
 django-admin startproject crudproject1
@@ -24,3 +25,7 @@ Le fichier views.py contient la méthode pour l'ajout.
 
 La route est configurée dans urls.py comme ceci :
 `path('', views.add_show, name="addandshow")`.
+=======
+# Mon premier CRUD avec Django
+
+>>>>>>> 07b3d66 (Deuxième version : mise à jour et suppression implémentées)
